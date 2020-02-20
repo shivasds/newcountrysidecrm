@@ -30,8 +30,8 @@
 $baseURL = ($this->session->userdata('user_type') == 'admin') ? base_url('admin') : base_url();
 $i=1;
 ?>
-<div class="menu">
-									<ul id="menu" >
+<div class="menu headerScroll">
+									<ul id="menu" class="scrollbar2">
 										<li class="<?php if($name=='index'){echo 'active';}?>"><a href="<?php echo $baseURL; ?>"><i class="fa fa-home"></i> <span>Home</span></a></li>
 	
 
@@ -166,3 +166,20 @@ $i=1;
 
     }
 </style>
+<script>
+//   $(document).ready(function(){
+//   $(".menu").click(function(){
+//     // alert("hii");
+//     $( "li" ).parent().removeClass("scrollbar2");
+//   });
+// }); 
+
+
+$(document).ready(function(){
+  $(".headerScroll").click(function(){
+    // alert("hii");
+    $( ".headerScroll li" ).parent().toggleClass("scrollbar2");
+  });
+});
+</script>
+
