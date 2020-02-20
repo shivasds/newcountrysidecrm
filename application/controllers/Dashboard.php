@@ -88,6 +88,7 @@ class Dashboard extends CI_Controller {
 
         }
         elseif ($this->session->userdata('user_type') == 'manager'){
+            $this->session->set_userdata('user_id',$data['user_id']);
             $data['imp_callbacks'] = $this->callback_model->fetch_important_callbacks($data['user_id']);
             $data['team_members'] = $this->user_model->get_team_members($data['user_id']);
             $data['total_team_members'] = $this->user_model->get_team_members_count($data['user_id']); 
