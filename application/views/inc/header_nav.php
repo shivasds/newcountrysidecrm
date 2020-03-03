@@ -54,7 +54,7 @@ $i=1;
                     <a href="<?= $baseLink;?>" <?= $aAttr; ?> ><i class="<?php  echo $pModule['class']?>"></i> <span><?= $pModule['module'].((count($childModules)>0) ? '<span class="caret"></span>' :'') ?></span></a>
                     <?php
                     if(count($childModules)>0){
-                        echo '<ul class="dropdown-menu scrollbar1" id="bluescroll">';
+                        echo '<ul>';
                         foreach ($childModules as $cModule) {
                             $baseLink = ($this->session->userdata('user_type') == 'admin') ? base_url('admin/'.$cModule['permalink']) : base_url($cModule['permalink']);
                             //if(in_array($cModule['id'], $permissionArry))
@@ -157,29 +157,55 @@ $i=1;
 									</li>-->
 								  </ul>
 								</div>
-								<style>
+								<!-- <style>
     .table {
         color: green;
-       /* display: block;*/
-        max-width: 100%;
-        overflow: scroll; <!-- Available options: visible, hidden, scroll, auto -->
-
+       max-width: 100%;
+        overflow: scroll;
     }
-</style>
+</style> -->
 <script>
-//   $(document).ready(function(){
-//   $(".menu").click(function(){
+
+
+// $(document).ready(function(){
+//   $(".headerScroll").click(function(){
 //     // alert("hii");
-//     $( "li" ).parent().removeClass("scrollbar2");
+//     $( ".headerScroll ul li" ).parent().toggleClass("scrollbar2");
 //   });
-// }); 
+// });
 
 
 $(document).ready(function(){
-  $(".headerScroll").click(function(){
-    // alert("hii");
-    $( ".headerScroll li" ).parent().toggleClass("scrollbar2");
+  $("#menu li ul").addClass("submenuhidden")
   });
-});
+
+  var ul = document.getElementById('menu');
+  console.log(ul)
+    ul.onclick = function(event) {
+        var target = getEventTarget(event);
+        
+        if($(target).parents('li').children('ul').attr("class")=="submenuhidden")
+        {
+          $(target).parents('li').children('ul').removeClass("submenuhidden")
+          $(target).parents('li').children('ul').addClass("submenushow")
+          
+        }
+        else{
+          $(target).parents('li').children('ul').addClass("submenuhidden")
+          $(target).parents('li').children('ul').removeClass("submenushow")
+        }
+        
+        
+        
+    };
+    function getEventTarget(e) {
+        e = e || window.event;
+        return e.target || e.srcElement; 
+    }
+//});
+</script>
+
+
+
 </script>
 

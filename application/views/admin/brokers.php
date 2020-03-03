@@ -188,6 +188,8 @@
 							$(".sidebar-icon").click(function() {                
 							  if (toggle)
 							  {
+                                // $("head").append("<style>padding: 7px 15px!important; background-color: #021f4eba !important;font-size: 10px!important;</style>");
+                              
 								$(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
 								$("#menu span").css({"position":"absolute"});
 							  }
@@ -204,9 +206,9 @@
 							</script>
 <!--js -->
 
-<script type="text/javascript" src="<?php echo base_url()?>assets/js/TweenLite.min.js"></script>
+<!-- <script type="text/javascript" src="<?php echo base_url()?>assets/js/TweenLite.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/CSSPlugin.min.js"></script>
-<script src="<?php echo base_url()?>assets/js/scripts.js"></script>
+<script src="<?php echo base_url()?>assets/js/scripts.js"></script> -->
 
 <!-- Bootstrap Core JavaScript -->
    

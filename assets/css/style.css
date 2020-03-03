@@ -13,6 +13,11 @@ body a{
 	/* background:#011D4A!important; */
 }
 /* chnage to make admin menu scrollable */
+
+.logo{
+	background: #021f4e;
+}
+
 	.scrollbar1{
 		height: auto;
 		max-height: 180px;
@@ -24,12 +29,10 @@ body a{
 	}
 	.scrollbar2{
 		height: auto;
-		max-height: 350px;
+		max-height: 450px;
 		overflow-x: hidden;
-		
-		/* background: #02BBCA!important; */
 		padding-bottom: 64px!important;
-		/* border-radius: 10px */
+	
 	}
 
 	#bluescroll::-webkit-scrollbar-track
@@ -219,11 +222,7 @@ a:hover { transition: all 200ms ease-in-out; }
   padding: 0;
 }
 
-#menu li ul {
-  opacity: 0;
-  /* change to make ul scrollable
-  height: 0px; */
-}
+
 
 #menu li a {
  font-style: normal;
@@ -262,22 +261,44 @@ a:hover { transition: all 200ms ease-in-out; }
   padding: 0;
 }
 
-#menu li ul {
-  position: absolute;
+
+
+.submenuhidden{
+	position: absolute;
   visibility: hidden;
-  left: 100%;
-  top: -1px;
-  background-color: #2b303a;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
   opacity: 0;
-  transition: opacity 0.1s linear;
-  border-top: 1px solid rgba(69, 74, 84, 0.7);
 }
 
-#menu li:hover > ul {
+.submenushow{
+
   visibility: visible;
   opacity: 1;
+  
 }
+.submenushow li a{
+	text-align: center;
+    font-size: 12px!important;
+    background-color: #021f4eba !important;
+}
+.submenushow a {
+	list-style-type: circle;
+}
+.caretdown {
+    border-bottom: 4px dashed;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    content: "";
+    display: inline-block;
+    height: 0;
+    vertical-align: middle;
+    width: 0;
+    margin-left: 2px;
+}
+
+/* #menu li:hover > ul {
+  visibility: visible;
+  opacity: 1;
+} */
 li#menu-mensagens,li#menu-arquivos {
 background-color:#00C6D7!important;
 }
@@ -366,7 +387,7 @@ span.name-caret {
 
 .down{
 	/*check  padding: 26px 0 30px; */
-	padding: 21px 0px 13px;
+	padding: 10px 0px 13px;
     text-align: center;
       background: #fff;
 }
@@ -1172,7 +1193,7 @@ a.deutsch img,a.ukrainian img,a.english img,a.espana img,a.russian img {
     font-size: 0.9em;
 }
 .inner-content{
-	margin-left: 7px;
+	margin-left: 15px;
 }
 .container{
 	margin-left: 8px;
@@ -1286,7 +1307,7 @@ ul.dropdown {
        float: right;
     width: 30%;
     text-align: center;
-    padding: 1.54em 1em;
+    padding: 1.60em 0em;
     background-color: #eee;
     border: none;
        border-right: 2px solid #052963;
@@ -1300,10 +1321,10 @@ ul.dropdown {
     font-size: 1em;
 }
 .stats-left h4 {
-    font-size: 2em;
+	font-size: 1.7em;
     color: #fff;
-    margin-top: 10px;
-	font-weight: 400;
+    margin-top: 17px;
+    font-weight: 400;
 }
 .stats-right label {
     font-size: 2em;
@@ -2502,10 +2523,10 @@ ul.dropdown-menu.dropdown-menu-right li a {
 ul.dropdown-menu.dropdown-menu-right {
     border-radius: 0;
 }
-.dropdown-menu {
+ .dropdown-menu {
     position: absolute;
     top: 100%;
-    left: -105px;
+    left: 100%;
     z-index: 1000;
     display: none;
     float: left;
@@ -5766,8 +5787,15 @@ footer  p a:hover ,.footer p a:hover{
 		width: 83%;
 	}
 	.stats-left h4 {
-		font-size: 1.8em;
+		font-size: 1.3em;
 		margin-top: 14px;
+	}
+	.active_emp {
+		font-size: 25px;
+	}
+	.stats-right label {
+		font-size: 25px;
+		color: #3E3D3D;
 	}
 	.candile-inner svg {
 		height: 350px!important;
@@ -6034,7 +6062,7 @@ footer  p a:hover ,.footer p a:hover{
         /* margin-left: 10px; */
 	}
 	#menu li a {
-		padding: 12px 20px;
+		padding: 10px 20px;
 		font-size: 0.85em;
 	}
 	/* check */
@@ -7207,7 +7235,7 @@ footer  p a:hover ,.footer p a:hover{
 	}
 	.left-content {
 		float: right;
-		width: 87%;
+		width: 89%;
 	}
 	.page-container.sidebar-collapsed .left-content {
 		float: right;
@@ -7626,7 +7654,7 @@ footer  p a:hover ,.footer p a:hover{
 		margin: 0px 0 8px 0;
 	}
 	.table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-		padding: 10px 3px !important;
+		padding: 7px 0px !important;
 		font-size: 0.7em;
 		color: #999;
 		border-top: none !important;
@@ -7802,10 +7830,10 @@ footer  p a:hover ,.footer p a:hover{
 	}
 	.page-container.sidebar-collapsed-back .left-content {
 		float: right;
-		width: 83%;
+		width: 90%;
 	}
 	.left-content {
-		width: 86%;
+		width: 90%;
 	}
 	.outter-wp {
 		padding: 0.5em 1.5em;

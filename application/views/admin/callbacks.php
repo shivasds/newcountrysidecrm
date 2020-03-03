@@ -1337,63 +1337,10 @@
 
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/TweenLite.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/CSSPlugin.min.js"></script>
-<script src="<?php echo base_url()?>assets/js/scripts.js"></script>
+
 
 <!-- Bootstrap Core JavaScript -->
 
-   <script>
-    
-
-        $("#refresh").click(function(){
-            $(".se-pre-con").show();
-            $.get("<?php echo base_url(); ?>dashboard/get_live_feed_back", function(response){
-                $("#live_feed_back_body").html(response);
-                $(".se-pre-con").hide("slow");
-            });
-        });
-
-        $("#overdue_lead_count").click(function(){
-            var form = document.createElement('form');
-            form.method = "POST";
-            form.action = "<?php echo base_url()."dashboard/generate_report" ?>";
-            
-            var input = document.createElement('input');
-            input.type = "text";
-            input.name = "toDate";
-            input.value = $(this).data('datetime');
-            form.appendChild(input);
-
-            input = document.createElement('input');
-            input.type = "text";
-            input.name = "reportType";
-            input.value = "due";
-            form.appendChild(input);
-
-            document.body.appendChild(form);
-            form.submit();
-        });
-
-        $('.emailSiteVisit').on('click', function(){
-            $(".se-pre-con").show();
-            $.ajax({
-                type : 'POST',
-                url : "<?= base_url('site-visit-report-mail');?>",
-                data:1,
-                success: function(res){
-                    $(".se-pre-con").hide("slow");
-                    if(res == 1)
-                        alert('Email Sent Successfully.');
-                    else
-                        alert('Email Sent fail!');
-                }
-            });
-        });
-
-    });
-    // $('#filter_revenue').click(get_revenues());
-  
-
-</script>
 <script>
     $(document).ready(function() {
         $('#example').DataTable();
