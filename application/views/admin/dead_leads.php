@@ -4,6 +4,7 @@
         $this->load->view('inc/admin_header');
     else
         $this->load->view('inc/header');    
+
 ?>
 <body>
 	 <div class="se-pre-con"></div>
@@ -176,7 +177,29 @@
                     <?php } ?>               
                 </select>
             </div>
+<?php
+if($this->session->userdata('user_type')=="manager")
+{
 
+?>
+  <div class="col-md-3 form-group">
+                <label for="assign">User Name:</label>
+                <select  class="form-control"  id="user_name" name="user_name" >
+                    <option value="">Select</option>
+                    <?php
+                    $user_data_1 =  $this->callback_model->get_under_magaer_ids($this->session->userdata('user_id'));
+                    foreach( $user_data_1 as $user){ 
+                         
+                        ?>
+                        <option value="<?php echo $user->id ?>" ><?php echo $user->first_name." ".$user->last_name; ?></option>
+                    <?php } ?>
+                </select>
+            </div>
+<?php
+}
+else
+{
+?>
             <div class="col-md-3 form-group">
                 <label for="assign">User Name:</label>
                 <select  class="form-control"  id="user_name" name="user_name" >
@@ -205,6 +228,9 @@
                     <?php } ?>
                 </select>
             </div>
+            <?php
+        }
+            ?>
         
             <div class="col-md-3">
                 <div class="form-group">

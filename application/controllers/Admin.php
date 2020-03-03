@@ -2069,6 +2069,10 @@ class Admin extends CI_Controller {
 	}
 	public function acres99_leads()
 	{
+		if($this->session->userdata("user_type")!="admin")
+    {
+    	 echo "<script>alert('You are not allowed');location.href='".base_url()."'</script>";
+    }
 		
 		$data['lead']=$this->fetch_99acre_online_leads();
 		//print_r($data['lead']);die;
@@ -2090,6 +2094,10 @@ class Admin extends CI_Controller {
 	}
 	public function magicbricks_leads()
 	{
+		if($this->session->userdata("user_type")!="admin")
+    {
+    	 echo "<script>alert('You are not allowed');location.href='".base_url()."'</script>";
+    }
 		$leadsdata_magicbrick=$this->magic_brick_api();
 		//echo"this is data";print_r($leadsdata_magicbrick);die;
 		$data['name'] ="more";
@@ -2117,6 +2125,10 @@ class Admin extends CI_Controller {
 	}
 		public function commonfloor_leads()
 	{
+		if($this->session->userdata("user_type")!="admin")
+    {
+    	 echo "<script>alert('You are not allowed');location.href='".base_url()."'</script>";
+    }
 		$output=array(); 
 		$leadsdata_commonfloor=$this->commonfloor_leads_api();
 		//print_r($leadsdata_commonfloor);die;

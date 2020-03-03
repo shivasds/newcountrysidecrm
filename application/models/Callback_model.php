@@ -622,7 +622,8 @@ $list_id=implode(',', $ids);
         return $lead_sources;
     }
 
-    function get_call_reports($user_id = null){
+    function get_call_reports($user_id = null ){
+         
         $this->db->select("u.*");
         
         if($user_id)
@@ -656,6 +657,16 @@ $list_id=implode(',', $ids);
                 $value->productivity = ($value->yesterday_callback_count/$value->total_calls) * 100;
         }
         return $result;
+    }
+
+    public function get_under_magaer_ids($user_id='')
+    {
+        $this->db->select("*");
+        $this->db->where("(reports_to=$user_id)");
+        $this->db->from('user');
+         $result = $this->db->get()->result();
+       // echo  $this->db->last_query();die;
+         return $result;
     }
 
     function fetch_total_revenue($user_id=null,$team=null){
