@@ -174,7 +174,8 @@
 
                                         <!--footer section start-->
                                             <footer>
-                                            <p>&copy <?= date('Y')?> Countryside Group . All Rights Reserved | Design by <a href="https://secondsdigital.com/" target="_blank">Seconds Digital Solutions.</a></p>
+                                               <p>&copy <?= date('Y')?> Countryside Group . All Rights Reserved | Design & Maintained by <a href="http://www.countrysidegroup.in/" target="_blank">Countryside Groups</a></p>
+										
                                             </footer>
                                         <!--footer section end-->
                                     </div>

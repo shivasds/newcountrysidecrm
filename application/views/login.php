@@ -103,7 +103,8 @@
 												<div class="error-btn">
 															
 															</div>
-										   <p>&copy <?= date('Y')?> Countryside Group . All Rights Reserved | Design by <a href="https://secondsdigital.com/" target="_blank">Seconds Digital Soultions</a></p>
+										   <p>                       <p>&copy <?= date('Y')?> Countryside Group . All Rights Reserved | Design & Maintained by <a href="http://www.countrysidegroup.in/" target="_blank">Countryside Groups</a></p>
+									</a></p>
 										</div>
 									<!--footer section end-->
 									<!--/404-->
